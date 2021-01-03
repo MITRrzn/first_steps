@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		{% block head %}
+
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>{{ title }}</title>
+			<link rel="stylesheet" href="/css/table.css?421">
+			<link rel="stylesheet" href="/css/header_footer.css?22">
+			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" ="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+			{% block extrahead %}{% endblock %}
+		{% endblock %}
+	</head>
+
+	<body>
+		{% block header %}
+			<header>
+				<a href="/index.php">Home</a>
+				<a href="/user_card.php">User cards</a>
+			</header>
+		{% endblock %}
+
+		<main>
+			{% block search %}
+				<div class="searchform">
+					<form action="" method="GET" id="srch_tbl">
+						<input type="text" name="search" placeholder="Search..." minlength="3" maxlength="20" value="{{ search }}">
+						<button type="submit">
+							<i class="fas fa-search fa-3x "></i>
+						</button>
+					</form>
+
+					<form action="" method="get">
+						<button type="submit">
+							<i class="fas fa-times fa-4x"></i>
+						</i>
+					</button>
+					<input type="hidden" name="search">
+				</form>
+
+			</div>
+		{% endblock %}
+		{% block user_table %}
+			<table>
+				<tr>
+					{% for item in thName|slice(0,7) %}
+						<th>{{ item }}</th>
+					{% endfor %}
+					<th>&nbsp
+					</th>
+				</tr>
+
+				{% for user in list %}
+					<tr>
+						{% for det_user in user|slice(0,7) %}
+							<td>{{ det_user}}</td>
+						{% endfor %}
+						<td>
+							<a href="user_card.php?id={{ user.id }}" class="tbl_link">
+								<i class="fa fa-eye" aria-hidden="true"></i>
+							</a>
+						</td>
+					</tr>
+				{% endfor %}
+			</table>
+			<div class="nav">
+				<a href="?page=0" class="nav_angle {% if current_page < 1 %}  non_active {% endif %} ">
+					<i class="fas fa-angle-double-left fa-3x"></i>
+				</a>
+				<a href='?page={{ prev_page }}' class="nav_angle {% if current_page < 1 %}  non_active {% endif %} ">
+					<i class="fas fa-angle-left fa-3x"></i>
+				</a>
+				<a href='?page={{ next_page }}' class="nav_angle {% if current_page >= page_count-1 %} non_active {% endif %}">
+					<i class="fas fa-angle-right fa-3x"></i>
+				</a>
+				<a href='?page= {{ page_count-1 }}' class="nav_angle {% if current_page >= page_count-1 %} non_active {% endif %}">
+					<i class="fas fa-angle-double-right fa-3x"></i>
+				</a>
+			</div>
+		{% endblock %}
+	</body>
+</html></main><footer>
+{% block footer %}
+	"You are using{{ uAgent }}, your IP -<b>{{ uIP }}</b>";
+{% endblock %}</footer></body></html>

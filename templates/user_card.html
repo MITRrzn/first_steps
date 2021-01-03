@@ -1,0 +1,43 @@
+{% extends "index.html" %}
+
+{% block extrahead %}
+	<link rel="stylesheet" href="/css/user_card.css">
+{% endblock %}
+
+{% block search %}{% endblock %}
+
+{% block user_table %}
+
+	<div class="user_card">
+		<div class="user_avatar">
+			{% if user_info.avatar == NULL %}
+				<img src="https://www.flaticon.com/svg/static/icons/svg/3526/3526954.svg" alt="">
+			{% else %}
+				<img src="data:image/png;base64,{{avatar}}" alt="">
+			{% endif %}
+		</div>
+		<div class="div2">
+			User ID:
+			{{user_info.id}}
+		</div>
+		<div class="div3">
+			User Name:
+			{{user_info.name|upper}}</div>
+		<div class="div4">
+			User Age:
+			{{user_info.age}}
+		</div>
+		<div class="div5">
+			User Email:
+			{{user_info.email}}</div>
+		<div class="div6">
+			User Country:
+			{{user_info.country}}</div>
+		<div class="div7">
+			User City:
+			{{user_info.city}}</div>
+		<div class="div8">
+			Registration Date:
+			{{user_info.reg_date}}</div>
+	</div>
+{% endblock %}

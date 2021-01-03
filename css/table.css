@@ -1,0 +1,85 @@
+table {
+    background: #012B39;
+    border-radius: 0.25em;
+    border-collapse: collapse;
+    margin: 0 auto;
+    cursor: pointer;
+    margin-top: 25px;
+  }
+  th {
+    border-bottom: 1px solid #364043;
+    color: #E2B842;
+    font-size: 0.85em;
+    font-weight: 600;
+    padding: 0.5em 1em;
+    text-align: center;
+  }
+  td {
+    color: #fff;
+    font-weight: 400;
+    padding: 0.65em 1em;
+  }
+  
+  tr {
+    transition: background 0.25s ease;
+  }
+  tr:hover {
+    background: #014055;
+  }
+  #srch_tbl{
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 28px;
+  }
+  button{
+    outline: none; /* Для синий ободки */
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+  #srch_tbl input:first-child{
+      height: 48px;
+      border: None;
+      border-bottom: 1px solid black;
+      font-size: 2em;
+      transition: 0.4s;
+  }
+  #srch_tbl input:first-child:focus{
+      border-bottom: 3px solid #04c0ff;
+  }
+table td:nth-child(8){
+    width: 20px;
+}
+table td:nth-child(9){
+    width: 10px;
+}
+.del_btn a{
+    color: #fff;
+}
+.edit_btn a{
+    color: #fff;
+}
+
+.nav_angle{
+    color:#000;
+}
+.nav{
+    display: flex;
+    justify-content: center;
+}
+
+.non_active{
+    pointer-events: none;
+    filter: opacity(50%)
+}
+
+.tbl_link{
+    text-decoration: none;
+    color: #fff;
+}
+.searchform {
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid black; */
+}
